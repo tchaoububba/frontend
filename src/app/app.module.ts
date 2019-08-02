@@ -20,7 +20,10 @@ import { CommonModule } from '@angular/common';
 
 import { ToastrModule } from 'ngx-toastr';
 import { MatProgressSpinnerModule} from '@angular/material';
+// Added by Stephen and Theanh
 import { LoginComponent } from './components/login/login.component';
+// UserService for Login Methods added by Steve and Theanh
+import { AuthenticationService } from './services/authentication.service';
 
 /** @ignore */
 @NgModule({
@@ -49,7 +52,8 @@ import { LoginComponent } from './components/login/login.component';
       MatProgressSpinnerModule
    ],
    providers: [
-      GlobalReports
+      GlobalReports,
+      AuthenticationService
    ],
    bootstrap: [AppComponent]
 })

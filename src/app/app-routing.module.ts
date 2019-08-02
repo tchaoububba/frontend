@@ -15,8 +15,8 @@ const routes: Routes = [
    { path: 'module-creator', component: ModuleCreatorPageComponent, pathMatch: 'full' },
    { path: 'module-index', component: ModuleIndexPageComponent, pathMatch: 'full' },
    { path: 'reports', component: ReportsPageComponent},
-   { path: '**', redirectTo: '/content-creator', pathMatch: 'full' },
-   { path: 'login', component: LoginComponent, pathMatch: 'full'}
+   { path: 'login', component: LoginComponent, pathMatch: 'full'},
+   { path: '**', redirectTo: '/content-creator', pathMatch: 'full' }
 ];
 
 /** @ignore */
