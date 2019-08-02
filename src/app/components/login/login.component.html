@@ -1,4 +1,33 @@
-<!DOCTYPE html>
+<form action>
+  <div class="input-group form-group">
+      <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-user"></i></span>
+      </div>
+      <input id="email" type="text" [(ngModel)] = "userToLog.email" name="email" class="form-control" placeholder="email">
+      
+  </div>
+  <div class="input-group form-group">
+      <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-key"></i></span>
+      </div>
+      <input id="password" type="password" [(ngModel)] = "userToLog.password" name="password" class="form-control" placeholder="password">
+  </div>
+  <div class="row align-items-center remember">
+      <input type="checkbox">Remember Me
+  </div>
+  <div class="form-group">
+      <button (click)="loginSubmit()" class="btn float-right login_btn">Login</button>
+      <!-- <input id="formButton" type="button" value="Login" class="btn float-right login_btn" onclick="loginSubmit()"> -->
+  </div>
+</form>
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
     <head>
         <title>Hello Spring Security</title>
@@ -21,4 +50,4 @@
             <li>Go to the <a href="/user/index" th:href="@{/user/index}">secured pages</a></li>
         </ul>
     </body>
-</html>
+</html> -->
