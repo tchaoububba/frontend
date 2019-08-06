@@ -6,6 +6,7 @@ import { ModuleCreatorPageComponent } from './components/module-creator-page/mod
 import { ModuleIndexPageComponent } from './components/module-index-page/module-index-page.component';
 import { ReportsPageComponent } from './components/reports-page/reports-page.component';
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 /** @ignore */
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
    { path: 'module-index', component: ModuleIndexPageComponent, pathMatch: 'full' },
    { path: 'reports', component: ReportsPageComponent},
    { path: 'login', component: LoginComponent, pathMatch: 'full'},
+   { path: 'register', component: RegisterComponent, pathMatch: 'full'},
    { path: '**', redirectTo: '/content-creator', pathMatch: 'full' }
 ];
 

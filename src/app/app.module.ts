@@ -24,6 +24,7 @@ import { MatProgressSpinnerModule} from '@angular/material';
 import { LoginComponent } from './components/login/login.component';
 // UserService for Login Methods added by Steve and Theanh
 import { AuthenticationService } from './services/authentication.service';
+import { RegisterComponent } from './components/register/register.component';
 
 /** @ignore */
 @NgModule({
@@ -36,7 +37,8 @@ import { AuthenticationService } from './services/authentication.service';
       ModuleIndexPageComponent,
       ReportsPageComponent,
       ReportsTimeGraphComponent,
-      LoginComponent
+      LoginComponent,
+      RegisterComponent
    ],
    imports: [
       BrowserModule,

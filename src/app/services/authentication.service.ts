@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthenticationService {
+  connectedUser: User;
     constructor(private _httpService: HttpClient) {}
 
     loginAuthentication(user:User): Observable<any>{
@@ -16,4 +17,13 @@ export class AuthenticationService {
       return this._httpService.post("http://localhost:8090/Buy_Stuffs/LoginController/logon", body);
     }
 
+    register(user: User) {
+      return this._httpService.post("http://desktop-tpu8n71:8989/api/User/",user);
+    }
+  
+    setConnectedUser(user) {
+      this.connectedUser = user;
+      localStorage.setItem('connectedUser',JSON.stringify(user));
+  
+    }
 }
