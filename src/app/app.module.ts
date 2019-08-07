@@ -25,6 +25,7 @@ import { LoginComponent } from './components/login/login.component';
 // UserService for Login Methods added by Steve and Theanh
 import { AuthenticationService } from './services/authentication.service';
 import { RegisterComponent } from './components/register/register.component';
+import { ContentApprovalComponent } from './components/content-approval/content-approval.component';
 
 /** @ignore */
 @NgModule({
@@ -38,7 +39,8 @@ import { RegisterComponent } from './components/register/register.component';
       ReportsPageComponent,
       ReportsTimeGraphComponent,
       LoginComponent,
-      RegisterComponent
+      RegisterComponent,
+      ContentApprovalComponent
    ],
    imports: [
       BrowserModule,
