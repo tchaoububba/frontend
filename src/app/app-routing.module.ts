@@ -7,6 +7,7 @@ import { ModuleIndexPageComponent } from './components/module-index-page/module-
 import { ReportsPageComponent } from './components/reports-page/reports-page.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { ContentApprovalComponent } from './components/content-approval/content-approval.component';
 
 /** @ignore */
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
    { path: 'reports', component: ReportsPageComponent},
    { path: 'login', component: LoginComponent, pathMatch: 'full'},
    { path: 'register', component: RegisterComponent, pathMatch: 'full'},
+   { path: 'approval', component: ContentApprovalComponent, pathMatch: 'full'},
    { path: '**', redirectTo: '/content-creator', pathMatch: 'full' }
 ];
 
