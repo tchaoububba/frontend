@@ -24,6 +24,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(){
+    console.log("Role is "+this.user.role);
     this.submitted = true;
     this.authService.register(this.user).pipe(delay(1500)).subscribe(resp => {
       this.authService.setConnectedUser(resp);
@@ -34,6 +35,17 @@ export class RegisterComponent implements OnInit {
       const message = error.error ? error.error.message ? error.error.message : 'Error Occurred' : 'Error Occurred';
       this.toastr.error(message);
     });
+  }
+
+  isQC(isTrue: boolean){
+    console.log("reaches isQC");
+    console.log(isTrue);
+    if (isTrue){
+      this.user.role="QC";
+    }
+    else{
+      this.user.role="USER"
+    }
   }
 
 }

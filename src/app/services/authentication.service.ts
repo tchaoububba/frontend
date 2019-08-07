@@ -18,7 +18,7 @@ export class AuthenticationService {
     }
 
     register(user: User) {
-      return this._httpService.post("http://desktop-tpu8n71:8989/api/User/",user);
+      return this._httpService.post("http://desktop-osghs5h:8989/api/User/",user);
     }
   
     setConnectedUser(user) {
