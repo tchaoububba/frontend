@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ContextService } from 'src/app/services/context.service';
 
 /**@ignore */
 @Component({
@@ -8,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _contextService:ContextService) { }
 
   /**@ignore */
   ngOnInit() {
+  }
+
+  logout() {
+    this._contextService.clear();
   }
 
 }

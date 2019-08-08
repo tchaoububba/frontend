@@ -22,7 +22,7 @@ export class ContextService {
         // localStorage.setItem(this.tokenKeyFullName, user.firstName+" "+user.lastName);
         // localStorage.setItem(this.tokenKeyEmail, user.email);
         console.log("REMEMBER TO REMOVE THE BELOW LINES IN CONTEXT.SERVICE.TS")
-        console.log("Stored Role: "+localStorage.getItem(this.tokenKeyRole)+" ID: "+localStorage.getItem(this.tokenKeyId));
+        console.log("Stored Role: "+localStorage.getItem(this.tokenKeyRole)+" and ID: "+localStorage.getItem(this.tokenKeyId));
     }
 
     retrieveTokenRole() {
