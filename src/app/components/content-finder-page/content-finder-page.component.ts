@@ -81,19 +81,16 @@ export class ContentFinderPageComponent implements OnInit {
    selLink: Link;
 
    /**
-    * Variable that holds the user who created this content
-   */
-   userId: User;
-
-   /**
     * Variable that holds the status that is currently selected
     */
-   selStatus: string[];
+   selStatuses: string[];
 
    /**
-    * Takes selected statuses and used for searching
+    * Variables for individual status checkboxes
     */
-   searchedStatus: string[];
+   statApproved: boolean;
+   statPending: boolean;
+   statDenied: boolean;
 
    /**
     * Content Finder Constructor
@@ -124,9 +121,10 @@ export class ContentFinderPageComponent implements OnInit {
       if (format === "All") {
          format = "";
       }
+      this.selectedStatuses();
       this.getIDsFromSubjects(this.selectedSubjects);
       let filter: Filter = new Filter(
-         this.title, format, this.moduleIDs,
+         this.title, format, this.moduleIDs, this.selStatuses
       );
       this.searchedSubjects = this.selectedSubjects;
       this.cs.filterContent(filter).subscribe(
@@ -177,7 +175,7 @@ export class ContentFinderPageComponent implements OnInit {
     */
    reset() {
       this.title = "";
-      this.selFormat = "Code";
+      this.selFormat = "All";
       this.selectedSubjects = [];
    }
 
@@ -277,6 +275,26 @@ export class ContentFinderPageComponent implements OnInit {
 
       this.selectedTags = [];
 
+   }
+
+   /**
+    * Description - Checks the approved, pending, and denied check boxes
+    * and adds the statuses they represent to an array. This array is then
+    * added into the submitted filter to sort by the desired content statuses.
+    */
+   selectedStatuses(){
+     let statusArray: string[] = new Array<string>();
+     if(this.statApproved === true){
+        statusArray.push('APPROVED')
+     }
+     if(this.statPending === true){
+      statusArray.push('PENDING')
+     }
+     if(this.statDenied === true){
+      statusArray.push('DENIED')
+     }
+      
+     this.selStatuses = statusArray;
    }
 
 }

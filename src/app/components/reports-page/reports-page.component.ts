@@ -70,7 +70,7 @@ export class ReportsPageComponent implements OnInit {
   getMetrics() {
     this.getIDsFromSubjects(this.selectedSubjects);
 
-    this.reportsService.getMetrics(new Filter("", this.selFormat, this.moduleIDs));
+    this.reportsService.getMetrics(new Filter("", this.selFormat, this.moduleIDs, null));
     this.codeExamples = null;
     this.lectureNotes = null;
     this.powerpoints = null;

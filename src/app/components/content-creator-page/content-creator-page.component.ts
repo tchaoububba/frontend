@@ -98,7 +98,7 @@ export class ContentCreatorPageComponent implements OnInit {
       let content: Content = new Content(
          null, this.title, this.selFormat,
          this.description, this.url,
-         this.getLinksFromSubjects(this.selectedSubjects));
+         this.getLinksFromSubjects(this.selectedSubjects), null, null);
 
       this.cs.createNewContent(content).subscribe(
          (response) => {
