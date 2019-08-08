@@ -47,6 +47,7 @@ export class ContextService {
 
     clear() {
         localStorage.removeItem(this.tokenKeyRole);
+        localStorage.removeItem(this.tokenKeyId);
         // localStorage.removeItem(this.tokenKeyFullName);
         // localStorage.removeItem(this.tokenKeyEmail);
     }
