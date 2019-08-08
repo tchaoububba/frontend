@@ -11,7 +11,8 @@ import { ContentApprovalComponent } from './components/content-approval/content-
 
 /** @ignore */
 const routes: Routes = [
-   { path: '', redirectTo: '/content-creator', pathMatch: 'full' },
+   // { path: '', redirectTo: '/content-creator', pathMatch: 'full' },
+   { path: '', redirectTo: '/finder', pathMatch: 'full' },
    { path: 'content-creator', component: ContentCreatorPageComponent, pathMatch: 'full' },
    { path: 'finder', component: ContentFinderPageComponent, pathMatch: 'full' },
    { path: 'module-creator', component: ModuleCreatorPageComponent, pathMatch: 'full' },
