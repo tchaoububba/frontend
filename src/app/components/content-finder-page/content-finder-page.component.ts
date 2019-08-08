@@ -5,6 +5,7 @@ import { ContentFetcherService } from 'src/app/services/content-fetcher.service'
 import { ModuleStoreService } from 'src/app/services/module-store.service';
 import { ToastrService } from 'ngx-toastr';
 import { Link } from 'src/app/models/Link';
+import { User } from 'src/app/models/user';
 
 /** Typescript component for Content Finder page */
 @Component({
@@ -80,6 +81,21 @@ export class ContentFinderPageComponent implements OnInit {
    selLink: Link;
 
    /**
+    * Variable that holds the user who created this content
+   */
+   userId: User;
+
+   /**
+    * Variable that holds the status that is currently selected
+    */
+   selStatus: string[];
+
+   /**
+    * Takes selected statuses and used for searching
+    */
+   searchedStatus: string[];
+
+   /**
     * Content Finder Constructor
     * @param cs Allows us to fetch content
     * @param ms Allows us to get information for tags
@@ -110,7 +126,7 @@ export class ContentFinderPageComponent implements OnInit {
       }
       this.getIDsFromSubjects(this.selectedSubjects);
       let filter: Filter = new Filter(
-         this.title, format, this.moduleIDs
+         this.title, format, this.moduleIDs,
       );
       this.searchedSubjects = this.selectedSubjects;
       this.cs.filterContent(filter).subscribe(
