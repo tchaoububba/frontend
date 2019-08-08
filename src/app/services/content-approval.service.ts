@@ -12,7 +12,12 @@ export class ContentApprovalService {
 
   // REMEMBER TO FIX URLS=================================================
   getAllContent():Observable<any>{
+<<<<<<< HEAD
+
+    return this._httpService.get("http://desktop-tpu8n71:9002/cmsforce/content/")
+=======
     return this._httpService.get("http://desktop-osghs5h:9002/cmsforce/content/")
+>>>>>>> 2882fe476853dabf62ec0aefe7ab92f62cf611ce
   }
 
   approve(contentId:number) {
@@ -20,6 +25,13 @@ export class ContentApprovalService {
   }
 
   deny(contentId:number) {
+<<<<<<< HEAD
+    return this._httpService.get("http://desktop-tpu8n71:9002/cmsforce/content/"+contentId+"/false");
+  }
+
+}
+=======
     return this._httpService.get("http://desktop-osghs5h:9002/cmsforce/content/"+contentId+"/false/");
   }
 }
+>>>>>>> 2882fe476853dabf62ec0aefe7ab92f62cf611ce
