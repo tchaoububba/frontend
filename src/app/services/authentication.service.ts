@@ -14,11 +14,20 @@ export class AuthenticationService {
       let body = JSON.parse(JSON.stringify(user));
       console.log(body);
       // Remember to change URL
+<<<<<<< HEAD
       return this._httpService.post("http://desktop-tpu8n71:8011/api/login", body);
     }
 
     register(user: User) {
       return this._httpService.post("http://desktop-tpu8n71.home:8989/api/User/",user);
+=======
+      return this._httpService.post("http://figueroa:9009/user-ws/api/login", body);
+    }
+
+    register(user: User) {
+      console.log("Before enter register");
+      return this._httpService.post("http://figueroa:9009/user-ws/api/user",user);
+>>>>>>> fa1c9268b439eca10be21be27c3b3a15366ea04c
     }
   
     setConnectedUser(user) {
