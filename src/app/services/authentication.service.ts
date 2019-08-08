@@ -14,11 +14,11 @@ export class AuthenticationService {
       let body = JSON.parse(JSON.stringify(user));
       console.log(body);
       // Remember to change URL
-      return this._httpService.post("http://desktop-osghs5h:8011/api/login", body);
+      return this._httpService.post("http://desktop-tpu8n71:8011/api/login", body);
     }
 
     register(user: User) {
-      return this._httpService.post("http://desktop-osghs5h:8989/api/User/",user);
+      return this._httpService.post("http://desktop-tpu8n71.home:8989/api/User/",user);
     }
   
     setConnectedUser(user) {
