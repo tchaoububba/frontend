@@ -22,6 +22,13 @@
             </div>
           </div>
         </div>
+        
+        <div class = "col">
+          <input [(ngModel)]="statApproved" type="checkbox" name="approved" value="approved" checked> Approved
+          <input [(ngModel)]="statPending" type="checkbox" name="pending" value="pending"> Pending
+          <input [(ngModel)]="statDenied" type="checkbox" name="denied" value="denied"> Denied
+          {{selStatus}}
+        </div>
 
         <div class="col-1"></div>
 
@@ -41,6 +48,7 @@
             </div>
             <div class="col-1"></div>
          </div>
+
          <div class="row btn mb-3">
             <button type="button" class="btn btn-primary" id="submitButton"
                (click)="submit()" *ngIf="!this.isSearching">Find Content</button>
