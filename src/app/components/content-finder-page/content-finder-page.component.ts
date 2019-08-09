@@ -90,7 +90,7 @@ export class ContentFinderPageComponent implements OnInit {
     */
    statApproved: boolean;
    statPending: boolean;
-   statDenied: boolean;
+   statDenied: boolean = false;
 
    /**
     * Content Finder Constructor

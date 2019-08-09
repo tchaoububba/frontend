@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment'
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 /** Accessible back-end endpoints */
 @Injectable({
@@ -34,6 +35,9 @@ export class EndpointsService {
    public readonly FILTER_CONTENT: string = this.baseURL + '/search';
    /** Get metrics for information in DB */
    public readonly GET_METRICS: string = this.baseURL + '/metrics/${timeFrame}';
+   /** Approve or deny content */
+   public readonly APPROVE_CONTENT: String = this.baseURL + '/content';
+   public readonly DENY_CONTENT: String = this.baseURL + '/content';
    
    /** Initialization of Endpoints */
    constructor(private http: HttpClient) { }
