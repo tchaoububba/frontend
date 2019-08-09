@@ -26,8 +26,6 @@
         <div class = "col">
           <input [(ngModel)]="statApproved" type="checkbox" name="approved" value="approved" checked> Approved
           <input [(ngModel)]="statPending" type="checkbox" name="pending" value="pending"> Pending
-          <input [(ngModel)]="statDenied" type="checkbox" name="denied" value="denied"> Denied
-          {{selStatus}}
         </div>
 
         <div class="col-1"></div>
@@ -73,6 +71,7 @@
                 <th scope="col">Format</th>
                 <th scope="col">Description</th>
                 <th scope="col">URL</th>
+                <th scope="col">Status</th>
                 <th scope="col">Subjects</th>
               </tr>
             </thead>
@@ -85,6 +84,7 @@
                 <td>{{content.format}}</td>
                 <td>{{content.description}}</td>
                 <td><a href="{{content.url}}">{{content.url}}</a></td>
+                <td>{{content.status}}</td>
                 <td class="tag-bubble-cell">
                   <div class="addTag">
                     <span data-toggle="modal" data-target="#addTag" (click)=selectedContent(content)

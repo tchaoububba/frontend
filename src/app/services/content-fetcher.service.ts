@@ -93,4 +93,13 @@ export class ContentFetcherService {
       let body: string = JSON.stringify(filter);
       return this.http.post<Content[]>(this.endpoints.FILTER_CONTENT, body, { headers: this.HEADERS });
    }
+
+   approve(contentId:number) {
+      return this.http.get(this.endpoints.APPROVE_CONTENT.replace('${id}', contentId.toString()));
+    }
+  
+    deny(contentId:number) {
+  
+      return this.http.get(this.endpoints.DENY_CONTENT.replace('${id}', contentId.toString()));
+    }
 }

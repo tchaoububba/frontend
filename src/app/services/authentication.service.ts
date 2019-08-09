@@ -18,8 +18,6 @@ export class AuthenticationService {
 
       return this._httpService.post("http://desktop-tpu8n71:9009/user-ws/api/login", body);
 
-      return this._httpService.post("http://desktop-osghs5h:9009/user-ws/api/login", body);
-
     }
 
     register(user: User) {
