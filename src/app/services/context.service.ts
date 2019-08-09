@@ -49,6 +49,7 @@ export class ContextService {
         localStorage.removeItem(this.tokenKeyRole);
         // localStorage.removeItem(this.tokenKeyFullName);
         // localStorage.removeItem(this.tokenKeyEmail);
+        localStorage.setItem("login","false")
     }
 
     private user = new User();
