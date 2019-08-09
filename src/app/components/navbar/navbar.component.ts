@@ -19,4 +19,24 @@ export class NavbarComponent implements OnInit {
     this._contextService.clear();
   }
 
+//Checking if logged in and checking if QC
+
+  ifLoggedIn(){
+    if( localStorage.getItem("login")=="true"){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+
+  ifQC(){
+    if(this._contextService.retrieveTokenRole()=="QC"){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+
 }
