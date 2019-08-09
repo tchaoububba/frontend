@@ -88,7 +88,7 @@ export class ContentFinderPageComponent implements OnInit {
    /**
     * Variables for individual status checkboxes
     */
-   statApproved: boolean;
+   statApproved: boolean = true;
    statPending: boolean;
    statDenied: boolean = false;
 
