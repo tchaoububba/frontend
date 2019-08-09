@@ -19,6 +19,7 @@ export class ContextService {
     store(user:User) {
         localStorage.setItem(this.tokenKeyRole, user.role);
         localStorage.setItem(this.tokenKeyId, user.id.toString());
+        this.setUser(user);
         // localStorage.setItem(this.tokenKeyFullName, user.firstName+" "+user.lastName);
         // localStorage.setItem(this.tokenKeyEmail, user.email);
         console.log("REMEMBER TO REMOVE THE BELOW LINES IN CONTEXT.SERVICE.TS")
