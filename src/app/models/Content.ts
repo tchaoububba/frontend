@@ -41,7 +41,7 @@ export class Content {
       if (null != userid) this.userid = userid;
       if (null == userid) this.userid = new User;
       if (null != status) this.status = status;
-      if (null == status) this.status = "pending";
+      if (null == status) this.status = "PENDING";
    }
 
    /** Getter method for id */
