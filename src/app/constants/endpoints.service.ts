@@ -36,8 +36,8 @@ export class EndpointsService {
    /** Get metrics for information in DB */
    public readonly GET_METRICS: string = this.baseURL + '/metrics/${timeFrame}';
    /** Approve or deny content */
-   public readonly APPROVE_CONTENT: String = this.baseURL + '/content';
-   public readonly DENY_CONTENT: String = this.baseURL + '/content';
+   public readonly APPROVE_CONTENT: String = this.baseURL + '/content/${id}/true';
+   public readonly DENY_CONTENT: String = this.baseURL + '/content/${id}/false';
    
    /** Initialization of Endpoints */
    constructor(private http: HttpClient) { }
