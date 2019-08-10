@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment'
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 /** Accessible back-end endpoints */
 @Injectable({
@@ -9,6 +10,8 @@ import { environment } from '../../environments/environment'
 export class EndpointsService {
    /** Base URL to add endpoints to, obtained from ENV */
    public readonly baseURL = environment.cms_url;   // CHANGE TO HOST
+   /** Base authentication service URL to add endpoints to, obtained from ENV */
+   public readonly authURL = environment.userws_url; 
 
    /** Create Content Endpoint */
    public readonly CREATE_NEW_CONTENT: string = this.baseURL + '/content';
@@ -34,6 +37,13 @@ export class EndpointsService {
    public readonly FILTER_CONTENT: string = this.baseURL + '/search';
    /** Get metrics for information in DB */
    public readonly GET_METRICS: string = this.baseURL + '/metrics/${timeFrame}';
+   /** Approve or deny content */
+   public readonly APPROVE_CONTENT: string = this.baseURL + '/content/${id}/true';
+   public readonly DENY_CONTENT: string = this.baseURL + '/content/${id}/false';
+   /** Register User */
+   public readonly REGISTER_USER: string = this.authURL + '/api/user';
+   /** Login User*/
+   public readonly LOGIN_USER: string = this.authURL + '/api/login';
    
    /** Initialization of Endpoints */
    constructor(private http: HttpClient) { }
@@ -52,7 +62,9 @@ export class EndpointsService {
          this.GET_ALL_MODULES,
          this.GET_MODULE_BY_ID,
          this.FILTER_CONTENT,
-         this.GET_METRICS);
+         this.GET_METRICS,
+         this.APPROVE_CONTENT,
+         this.DENY_CONTENT);
 
       return endpoints;
    }

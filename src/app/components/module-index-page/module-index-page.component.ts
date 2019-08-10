@@ -24,7 +24,7 @@ export class ModuleIndexPageComponent implements OnInit {
    /**
     * Variable that will reference selected content for removal. Pre-initialized as it would cause errors upon loading the component.
     */
-   selCon: Content = new Content(0, "", "", "", "", []);
+   selCon: Content = new Content(0, "", "", "", "", [], null, null);
 
    /**
     * Variable that will reference the module of the selected content for removal. Pre-initialized as it would cause errors upon loading the component.
@@ -63,7 +63,7 @@ export class ModuleIndexPageComponent implements OnInit {
          this.contentVisible.set(module, false);
 
          let filter: Filter = new Filter(
-            null, null, [module.id]
+            null, null, [module.id], null
          );
          this.cs.filterContent(filter).subscribe(
             (response) => {

@@ -4,6 +4,7 @@ import { ContentFetcherService } from 'src/app/services/content-fetcher.service'
 import { Link } from 'src/app/models/Link';
 import { ModuleStoreService } from 'src/app/services/module-store.service';
 import { ToastrService } from 'ngx-toastr';
+import { ContextService } from '../../services/context.service';
 
 /** Typescript component for the Content Creator page */
 @Component({
@@ -56,7 +57,8 @@ export class ContentCreatorPageComponent implements OnInit {
    constructor(
       private cs: ContentFetcherService,
       public ms: ModuleStoreService,
-      private toastr: ToastrService
+      private toastr: ToastrService,
+      private contextService: ContextService
       ) {
    }
 
@@ -98,7 +100,7 @@ export class ContentCreatorPageComponent implements OnInit {
       let content: Content = new Content(
          null, this.title, this.selFormat,
          this.description, this.url,
-         this.getLinksFromSubjects(this.selectedSubjects));
+         this.getLinksFromSubjects(this.selectedSubjects), this.contextService.getUser(), null);
 
       this.cs.createNewContent(content).subscribe(
          (response) => {
