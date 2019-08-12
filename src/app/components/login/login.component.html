@@ -1,26 +1,43 @@
-<form action>
-  <div class="input-group form-group">
-      <div class="input-group-prepend">
-          <span class="input-group-text"><i class="fas fa-user"></i></span>
-      </div>
-      <input id="email" type="text" [(ngModel)] = "userToLog.email" name="email" class="form-control" placeholder="email">
-      
-  </div>
-  <div class="input-group form-group">
-      <div class="input-group-prepend">
-          <span class="input-group-text"><i class="fas fa-key"></i></span>
-      </div>
-      <input id="password" type="password" [(ngModel)] = "userToLog.password" name="password" class="form-control" placeholder="password">
-  </div>
-  <div class="row align-items-center remember">
-      <input type="checkbox">Remember Me
-  </div>
-  <div class="form-group">
-      <button (click)="loginSubmit()" class="btn float-right login_btn">Login</button>
-      <!-- <input id="formButton" type="button" value="Login" class="btn float-right login_btn" onclick="loginSubmit()"> -->
-  </div>
-</form>
+<div class="card " style="margin-bottom: 10px">
+    <div class="container">
+        <div class="col">
+            <div id="content">
+                <img src="/assets/img/logo.png" alt="revature" class="logo">
+            </div>
+        </div>
+        <div>
+            <form class="form-horizontal">
+                <label class="control-label col-sm-2">Email</label>
+                <div class="input-group form-group col-sm-8">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    </div>
+                    <input id="email" type="text" [(ngModel)]="userToLog.email" name="email" class="form-control"
+                        placeholder="email">
 
+                </div>
+                <label class="control-label col-sm-2">Password</label>
+                <div class="input-group form-group col-sm-8">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                    </div>
+                    <input id="password" type="password" [(ngModel)]="userToLog.password" name="password"
+                        class="form-control" placeholder="password">
+                </div>
+                <div class="form-check">
+                        <div class="col-sm-offset-2 col-sm-8">
+                            <input type="checkbox">
+                            <label class="form-check-label" for="defaultCheck1">Remember me</label>
+                        </div>       
+                    </div>
+                <div class="form-group col-sm-offset-2 col-sm-8">
+                    <button (click)="loginSubmit()" class="btn login_btn btn-primary">Login</button>
+                    <!-- <input id="formButton" type="button" value="Login" class="btn float-right login_btn" onclick="loginSubmit()"> -->
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 
 

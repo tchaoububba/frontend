@@ -5,7 +5,8 @@
 /** @ignore */
 export const environment = {
    production: false,
-   cms_url: 'http://localhost:9009/cmsforce'
+   cms_url: 'http://localhost:9009/cmsforce',
+   userws_url: 'http://localhost:9009/user-ws'
 };
 
 /*

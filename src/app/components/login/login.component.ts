@@ -51,6 +51,7 @@ export class LoginComponent implements OnInit {
       this._contextService.store(user);
       console.log("Set User");
       console.log(this.loggedUser);
+      localStorage.setItem("login","true")
       this.router.navigateByUrl('reports')
     } else {
       this.reset();
