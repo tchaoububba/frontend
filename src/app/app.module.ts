@@ -26,6 +26,7 @@ import { LoginComponent } from './components/login/login.component';
 import { AuthenticationService } from './services/authentication.service';
 import { RegisterComponent } from './components/register/register.component';
 import { ContentApprovalComponent } from './components/content-approval/content-approval.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 /** @ignore */
 @NgModule({
@@ -40,7 +41,8 @@ import { ContentApprovalComponent } from './components/content-approval/content-
       ReportsTimeGraphComponent,
       LoginComponent,
       RegisterComponent,
-      ContentApprovalComponent
+      ContentApprovalComponent,
+      ForgotPasswordComponent
    ],
    imports: [
       BrowserModule,

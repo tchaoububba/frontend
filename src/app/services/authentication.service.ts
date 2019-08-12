@@ -38,4 +38,11 @@ export class AuthenticationService {
       localStorage.setItem('connectedUser',JSON.stringify(user));
   
     }
+
+    reset(email: String) {
+      const user = {
+        email: email
+      };
+      return this._httpService.post<User>(this.endpoints.RESET_PASSWORD, user);
+    }
 }

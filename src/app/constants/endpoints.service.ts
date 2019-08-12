@@ -44,6 +44,8 @@ export class EndpointsService {
    public readonly REGISTER_USER: string = this.authURL + '/api/user';
    /** Login User*/
    public readonly LOGIN_USER: string = this.authURL + '/api/login';
+   /** Reset Password */
+   public readonly RESET_PASSWORD: string = this.authURL + '/password/forgot';
    
    /** Initialization of Endpoints */
    constructor(private http: HttpClient) { }

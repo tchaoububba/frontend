@@ -8,6 +8,7 @@ import { ReportsPageComponent } from './components/reports-page/reports-page.com
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ContentApprovalComponent } from './components/content-approval/content-approval.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 /** @ignore */
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
    { path: 'login', component: LoginComponent, pathMatch: 'full'},
    { path: 'register', component: RegisterComponent, pathMatch: 'full'},
    { path: 'approval', component: ContentApprovalComponent, pathMatch: 'full'},
+   { path: 'forgot-password', component: ForgotPasswordComponent, pathMatch: 'full'},
    { path: '**', redirectTo: '/content-creator', pathMatch: 'full' }
 ];
 
