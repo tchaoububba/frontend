@@ -31,7 +31,7 @@ export class ForgotPasswordComponent implements OnInit {
       this.toastr.success('Registration Sucessful!');
     }, error => {
       this.submitted = false; 
-      const message = error.error ? error.error.message ? error.error.message : 'Error Occurred' : 'Error Occurred';
+      const message = error.error ? error.error.message ? error.error.message : 'Reset E-Mail Sent' : 'Reset E-Mail Sent';
       this.toastr.error(message);
     });
   }
