@@ -12,18 +12,28 @@ export class ContextService {
   constructor() { }
 
   private tokenKeyRole:string = "tokenKeyRole";
+  private tokenKeyId:string = "tokenKeyId";
   // private tokenKeyFullName:string = "tokenKeyFullName";
   // private tokenKeyEmail:string = "tokenKeyEmail";
 
     store(user:User) {
         localStorage.setItem(this.tokenKeyRole, user.role);
+        localStorage.setItem(this.tokenKeyId, user.id.toString());
+        this.setUser(user);
         // localStorage.setItem(this.tokenKeyFullName, user.firstName+" "+user.lastName);
         // localStorage.setItem(this.tokenKeyEmail, user.email);
+        console.log("REMEMBER TO REMOVE THE BELOW LINES IN CONTEXT.SERVICE.TS")
+        console.log("Stored Role: "+localStorage.getItem(this.tokenKeyRole)+" and ID: "+localStorage.getItem(this.tokenKeyId));
     }
 
     retrieveTokenRole() {
         let storedTokenRole:string = localStorage.getItem(this.tokenKeyRole);
         return storedTokenRole;
+    }
+
+    retrieveTokenId() {
+        let storedTokenId:number = parseInt(localStorage.getItem(this.tokenKeyId));
+        return storedTokenId;
     }
 
     // retrieveTokenFullName() {
@@ -38,8 +48,10 @@ export class ContextService {
 
     clear() {
         localStorage.removeItem(this.tokenKeyRole);
+        localStorage.removeItem(this.tokenKeyId);
         // localStorage.removeItem(this.tokenKeyFullName);
         // localStorage.removeItem(this.tokenKeyEmail);
+        localStorage.setItem("login","false")
     }
 
     private user = new User();

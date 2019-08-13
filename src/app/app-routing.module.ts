@@ -8,10 +8,12 @@ import { ReportsPageComponent } from './components/reports-page/reports-page.com
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ContentApprovalComponent } from './components/content-approval/content-approval.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 /** @ignore */
 const routes: Routes = [
-   { path: '', redirectTo: '/content-creator', pathMatch: 'full' },
+   // { path: '', redirectTo: '/content-creator', pathMatch: 'full' },
+   { path: '', redirectTo: '/finder', pathMatch: 'full' },
    { path: 'content-creator', component: ContentCreatorPageComponent, pathMatch: 'full' },
    { path: 'finder', component: ContentFinderPageComponent, pathMatch: 'full' },
    { path: 'module-creator', component: ModuleCreatorPageComponent, pathMatch: 'full' },
@@ -20,6 +22,7 @@ const routes: Routes = [
    { path: 'login', component: LoginComponent, pathMatch: 'full'},
    { path: 'register', component: RegisterComponent, pathMatch: 'full'},
    { path: 'approval', component: ContentApprovalComponent, pathMatch: 'full'},
+   { path: 'forgot-password', component: ForgotPasswordComponent, pathMatch: 'full'},
    { path: '**', redirectTo: '/content-creator', pathMatch: 'full' }
 ];
 
