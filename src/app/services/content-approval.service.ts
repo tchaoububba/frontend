@@ -15,19 +15,6 @@ export class ContentApprovalService {
 
   private readonly HEADERS = new HttpHeaders({ 'Content-Type': 'application/json' });
 
-<<<<<<< HEAD
-  // REMEMBER TO FIX URLS=================================================
-  getAllContent():Observable<any>{
-    return this._httpService.get("http://figueroa:9009/cmsforce/content/")
-  }
-
-  approve(contentId:number) {
-    return this._httpService.get("http://figueroa:9009/cmsforce/content/"+contentId+"/true/");
-  }
-
-  deny(contentId:number) {
-    return this._httpService.get("http://figueroa:9009/cmsforce/content/"+contentId+"/false/");
-=======
   constructor(private _httpService:HttpClient,
     private endpoints: EndpointsService) { }
 
@@ -43,7 +30,6 @@ export class ContentApprovalService {
   deny(contentId:number) {
 
     return this._httpService.get(this.endpoints.DENY_CONTENT.replace('${id}', contentId.toString()));
->>>>>>> 7fb459ccf895cf135a95787448d449e5960597a5
   }
 
 }
