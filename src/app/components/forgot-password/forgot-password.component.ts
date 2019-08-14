@@ -24,14 +24,21 @@ export class ForgotPasswordComponent implements OnInit {
   }
 
   onSubmit(){
+
     this.submitted = true;
       this.authService.reset(this.email).pipe(delay(1500)).subscribe(
         data => {
-      this.router.navigate(['/']);
-      this.toastr.success('Registration Sucessful!');
+        if(data == true) {
+
+      this.router.navigate(['/login']);
+      this.toastr.success('E-Mail sent!');
+        } else {
+          this.toastr.error('E-Mail not sent!')
+        }
+      
     }, error => {
       this.submitted = false; 
-      const message = error.error ? error.error.message ? error.error.message : 'Error Occurred' : 'Error Occurred';
+      const message = error.error ? error.error.message ? error.error.message : 'E-Mail not found' : 'E-Mail not found';
       this.toastr.error(message);
     });
   }

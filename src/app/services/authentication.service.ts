@@ -39,10 +39,11 @@ export class AuthenticationService {
   
     }
 
-    reset(email: String) {
+    reset(email: String): Observable<any> {
       const user = {
         email: email
       };
       return this._httpService.post<User>(this.endpoints.RESET_PASSWORD, user);
+
     }
 }
