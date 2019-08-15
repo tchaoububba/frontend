@@ -38,11 +38,7 @@ export class ForgotPasswordComponent implements OnInit {
       
     }, error => {
       this.submitted = false; 
-<<<<<<< HEAD
-      const message = error.error ? error.error.message ? error.error.message : 'Reset E-Mail Sent' : 'Reset E-Mail Sent';
-=======
       const message = error.error ? error.error.message ? error.error.message : 'E-Mail not found' : 'E-Mail not found';
->>>>>>> f31d4c8c2bbf18439e45147b534f333226392f11
       this.toastr.error(message);
     });
   }
